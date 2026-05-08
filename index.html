@@ -1,181 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Play Store</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f1f3f4;
-}
-
-/* Header */
-header {
-  background: #34a853;
-  color: white;
-  padding: 15px;
-  font-size: 22px;
-  text-align: center;
-  font-weight: bold;
-}
-
-/* Search */
-.search-box {
-  padding: 15px;
-  text-align: center;
-}
-
-.search-box input {
-  width: 90%;
-  padding: 12px;
-  border-radius: 25px;
-  border: none;
-  outline: none;
-  font-size: 16px;
-}
-
-/* Categories */
-.categories {
-  display: flex;
-  overflow-x: auto;
-  padding: 10px;
-  gap: 10px;
-}
-
-.cat {
-  background: white;
-  padding: 8px 15px;
-  border-radius: 20px;
-  cursor: pointer;
-  white-space: nowrap;
-  font-size: 14px;
-}
-
-.cat:hover {
-  background: #34a853;
-  color: white;
-}
-
-/* Apps grid */
-.apps {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 15px;
-  padding: 15px;
-}
-
-.app {
-  background: white;
-  border-radius: 12px;
-  padding: 12px;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.app:hover {
-  transform: scale(1.05);
-}
-
-.app img {
-  width: 80px;
-  height: 80px;
-  border-radius: 20px;
-}
-
-.app h4 {
-  margin: 10px 0 5px;
-  font-size: 16px;
-}
-
-.app p {
-  margin: 0;
-  color: gray;
-  font-size: 14px;
-}
-
-button {
-  margin-top: 8px;
-  background: #34a853;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #2c8c46;
-}
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RU Movies</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<header>My Play Store</header>
+  <header>
+    <div class="logo">🎬 RU Movies</div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#download">Download</a>
+    </nav>
+  </header>
 
-<div class="search-box">
-  <input type="text" id="search" placeholder="Search apps..." onkeyup="searchApp()">
-</div>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Unlimited Movies & Entertainment</h1>
+      <p>Watch trending movies, discover new content, and enjoy a smooth entertainment experience with RU Movies.</p>
 
-<div class="categories">
-  <div class="cat">All</div>
-  <div class="cat">Social</div>
-  <div class="cat">Video</div>
-  <div class="cat">Tools</div>
-  <div class="cat">Games</div>
-</div>
+      <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.rumovies.app&hl=en_IN" target="_blank">
+        Download App
+      </a>
+    </div>
 
-<div class="apps" id="appList">
+    <div class="phone-mockup">
+      <img src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?q=80&w=800&auto=format&fit=crop" alt="RU Movies App">
+    </div>
+  </section>
 
-  <div class="app">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-    <h4>WhatsApp</h4>
-    <p>⭐ 4.5</p>
-    <button onclick="installApp('https://www.whatsapp.com/')">Install</button>
-  </div>
-
-  <div class="app">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg">
-    <h4>YouTube</h4>
-    <p>⭐ 4.6</p>
-    <button onclick="installApp('https://www.youtube.com/')">Install</button>
-  </div>
-
-  <div class="app">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
-    <h4>Instagram</h4>
-    <p>⭐ 4.4</p>
-    <button onclick="installApp('https://www.instagram.com/')">Install</button>
-  </div>
-
-  <div class="app">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/X_icon_2023.svg">
-    <h4>Twitter (X)</h4>
-    <p>⭐ 4.2</p>
-    <button onclick="installApp('https://x.com/')">Install</button>
-  </div>
-
-</div>
-
-<script>
-function searchApp() {
-  let input = document.getElementById("search").value.toLowerCase();
-  let apps = document.getElementsByClassName("app");
-
-  for (let i = 0; i < apps.length; i++) {
-    let name = apps[i].innerText.toLowerCase();
-    apps[i].style.display = name.includes(input) ? "" : "none";
-  }
-}
-
-function installApp(link) {
-  window.open(link, "_blank");
-}
-</script>
-
-</body>
+  <section id="features" class="features">
+    <h2>App Features</h2>
 </html>
